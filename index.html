@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="./styles.css" rel="stylesheet" />
+
+    <script src="./script.js" defer></script>
+
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <h1>Form Validation</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="main">
+        <form novalidate>
+          <fieldset>
+            <legend>Your Information</legend>
+            <div class="input__container">
+              <label for="country">Country: </label><br>
+              <input class="user__input"
+                type="text"
+                id="country"
+                name="country"
+                list="country-choices"
+                pattern="[Cc]anada|[Uu]nited [Ss]tates|[Mm]exico|[Oo]ther"
+                required
+              />
+              <datalist id="country-choices">
+                <option>Canada</option>
+                <option>United States</option>
+                <option>Mexico</option>
+                <option>Other</option>
+              </datalist>
+            </div>
+            <div class="input__container">
+              <label for="zip">Zip Code: </label><br>
+              <input class="user__input" type="text" id="zip" name="zip code" pattern="\d{5}" required />
+            </div>
+            <div class="input__container">
+              <label for="mail">Email: </label><br>
+              <input class="user__input"
+                type="email"
+                id="mail"
+                name="email"
+                minlength="8"
+                required
+              />
+            </div>
+            <div class="input__container">
+              <label for="pass">Password: </label><br>
+              <input class="user__input"
+                type="password"
+                id="pass"
+                name="password"
+                minlength="8"
+                pattern="^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()]).*$"
+                required
+              />
+              <ul>
+                <li>must be at least 8 characters</li>
+                <li>must contain letters, numbers, and special characters</li>
+                <li>must have upper and lower case letters</li>
+              </ul>
+            </div>
+            <div class="input__container">
+              <label for="pass-check">Re-enter Password: </label><br>
+              <input class="user__input" type="password" id="pass-check" name="password check" required>
+            </p>
+            <div>
+              <input type="submit" id="form__submit" required />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer">&copy;Jesse Putnam</div>
+    </footer>
+  </body>
+</html>
